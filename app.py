@@ -29,7 +29,11 @@ figura_2 = px.scatter(df_filt[df_filt.continent.isin(['Europe', 'Americas'])],
               )
 
 #App
-app = dash()
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app=dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+#Server
+server = app.server
 
 #Layout
 app.layout = html.Div([
